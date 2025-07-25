@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LGS 1A1 - Admission Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white; min-height: 100vh;
+      overflow-y: auto;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .form-wrapper {
+      display: flex; justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .form-container {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(25px);
+      border-radius: 20px; padding: 2rem;
+      max-width: 1000px; width: 100%;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    label {
+      display: block;
+      margin: 0.6rem 0 0.2rem;
+      font-weight: 500;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      color: white;
+      margin-bottom: 0.9rem;
+    }
+    input[type="submit"] {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+    canvas {
+      border: 1px solid #555;
+      margin-bottom: 1rem;
+      background: white;
+      border-radius: 10px;
+    }
+    .undertaking {
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-wrapper">
+    <form class="form-container" id="admissionForm">
+
+      <div style="text-align:center; margin-bottom: 20px;">
+        <img src="Lahore-Grammar-School-Lgs-Logo-Vector.svg-.png" alt="LGS Logo" style="width: 150px; border-radius: 10px;">
+      </div>
+
+      <h2>Admission Form – LGS 1A1 Junior Campus</h2>
+
+      <!-- Fields as per Google Sheet Headers -->
+      <label>NAME OF BRANCH WHERE ADMISSION IS SOUGHT</label><input name="NAME OF BRANCH WHERE ADMISSION IS SOUGHT" type="text">
+      <label>CHILD'S FULL NAME</label><input name="CHILD'S FULL NAME" type="text">
+      <label>GENDER</label><select name="GENDER"><option>Male</option><option>Female</option></select>
+      <label>DATE OF BIRTH</label><input name="DATE OF BIRTH" type="date">
+      <label>PLACE OF BIRTH</label><input name="PLACE OF BIRTH" type="text">
+      <label>NATIONALITY</label><input name="NATIONALITY" type="text">
+      <label>CLASS IN WHICH ADMISSION IS DESIRED</label><input name="CLASS IN WHICH ADMISSION IS DESIRED" type="text">
+      <label>PREVIOUSE SCHOOL(IF APPLICABLE)</label><input name="PREVIOUSE SCHOOL(IF APPLICABLE)" type="text">
+      <label>FATHER NAME</label><input name="FATHER NAME" type="text">
+      <label>FATHER CNIC</label><input name="FATHER CNIC" type="text">
+      <label>FATHER PROFESSION/OCCUPATION</label><input name="FATHER PROFESSION/OCCUPATION" type="text">
+      <label>FATHER DESIGNATION</label><input name="FATHER DESIGNATION" type="text">
+      <label>FATHER WHATSAPP #</label><input name="FATHER WHATSAPP #" type="text">
+      <label>FATHER CELL #</label><input name="FATHER CELL #" type="text">
+      <label>FATHER E-MAIL</label><input name="FATHER E-MAIL" type="email">
+      <label>MOTHER NAME</label><input name="MOTHER NAME" type="text">
+      <label>MOTHER CNIC</label><input name="MOTHER CNIC" type="text">
+      <label>MOTHER PROFESSION/OCCUPATION</label><input name="MOTHER PROFESSION/OCCUPATION" type="text">
+      <label>MOTHER DESIGNATION</label><input name="MOTHER DESIGNATION" type="text">
+      <label>MOTHER WHATSAPP #</label><input name="MOTHER WHATSAPP #" type="text">
+      <label>MOTHER CELL #</label><input name="MOTHER CELL #" type="text">
+      <label>MOTHER E-MAIL</label><input name="MOTHER E-MAIL" type="email">
+      <label>ADDRESS</label><input name="ADDRESS" type="text">
+      <label>GUARDIAN NAME</label><input name="GUARDIAN NAME" type="text">
+      <label>GUARDIAN RELATIONSHIP</label><input name="GUARDIAN RELATIONSHIP" type="text">
+      <label>GUARDIAN PROFESSION/OCCUPATION</label><input name="GUARDIAN PROFESSION/OCCUPATION" type="text">
+      <label>GUARDIAN WHATSAPP #</label><input name="GUARDIAN WHATSAPP #" type="text">
+      <label>GUARDIAN CELL #</label><input name="GUARDIAN CELL #" type="text">
+      <label>EMERGENCY CONTACT PERSON NAME</label><input name="EMERGENCY CONTACT PERSON NAME" type="text">
+      <label>RELATIONSHIP</label><input name="RELATIONSHIP" type="text">
+      <label>CELL #</label><input name="CELL #" type="text">
+      <label>ALTERNATE CELL #</label><input name="ALTERNATE CELL #" type="text">
+      <label>EMERGENCY E-MAIL</label><input name="EMERGENCY E-MAIL" type="email">
+      <label>BLOOD GROUP</label><input name="BLOOD GROUP" type="text">
+      <label>ANY EXISTING HEALTH CONCERNS</label><textarea name="ANY EXISTING HEALTH CONCERNS"></textarea>
+      <label>ALLERGIES (IF ANY)</label><textarea name="ALLERGIES (IF ANY)"></textarea>
+      <label>NAME OF DOCTOR</label><input name="NAME OF DOCTOR" type="text">
+      <label>CONTACT NUMBER OF DOCTOR</label><input name="CONTACT NUMBER OF DOCTOR" type="text">
+
+      <div class="undertaking">
+        <strong>Parent/Guardian Undertaking:</strong><br>
+        I hereby declare that the information provided is true and complete. I understand that incorrect information may cancel the admission. I agree to bring all required documents on the day of the test & interview.
+      </div>
+
+      <label>SIGNATURE</label>
+      <canvas id="signature-pad" width="300" height="100"></canvas>
+      <input type="hidden" name="SIGNATURE" id="signature-data" />
+
+      <input type="submit" value="Submit Application" />
+    </form>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('signature-pad');
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+    canvas.addEventListener('mousedown', () => drawing = true);
+    canvas.addEventListener('mouseup', () => { drawing = false; ctx.beginPath(); });
+    canvas.addEventListener('mousemove', draw);
+    function draw(e) {
+      if (!drawing) return;
+      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = 'black';
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(e.offsetX, e.offsetY);
+    }
+
+    document.getElementById("admissionForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const signatureData = canvas.toDataURL();
+      document.getElementById("signature-data").value = signatureData;
+
+      fetch("PASTE_YOUR_WEB_APP_URL_HERE", {
+        method: "POST",
+        body: JSON.stringify(Object.fromEntries(new FormData(this))),
+        headers: { "Content-Type": "application/json" }
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.result === "success") {
+          alert("✅ Form submitted successfully.");
+        } else {
+          alert("❌ Submission failed. Please try again.");
+        }
+      })
+      .catch(err => {
+        console.error("Error:", err);
+        alert("⚠️ Technical error occurred.");
+      });
+    });
+  </script>
+</body>
+</html>
