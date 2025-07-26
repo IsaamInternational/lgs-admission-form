@@ -163,7 +163,7 @@
       const signatureData = canvas.toDataURL();
       document.getElementById("signature-data").value = signatureData;
 
-      fetch("PASTE_YOUR_WEB_APP_URL_HERE", {
+      fetch("https://script.google.com/macros/s/AKfycbxSjJgwNNwNjcTFiD-1wL2Eaf60GPBY3z6xMrjxQPUTipU1BReIv_Wi3jjiaDzHxDc/exec", {
         method: "POST",
         body: JSON.stringify(Object.fromEntries(new FormData(this))),
         headers: { "Content-Type": "application/json" }
